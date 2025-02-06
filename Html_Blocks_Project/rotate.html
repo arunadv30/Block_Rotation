@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100vh;
+      /* Full viewport height */
+    }
+
+    .rotating-div {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      text-align: center;
+      line-height: 100px;
+      font-size: 18px;
+      border-radius: 10px;
+      color: #000;
+      /* Initial text color */
+      animation: rotateClockwise 5s infinite linear, changeColorAndText 5s infinite linear;
+    }
+
+    /* Define the clockwise rotation animation */
+    @keyframes rotateClockwise {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Define the color and text change animation */
+    @keyframes changeColorAndText {
+      0% {
+        background-color: lightblue;
+        color: #000;
+        content: "Text 1";
+      }
+
+      25% {
+        background-color: lightgreen;
+        color: #fff;
+        content: "Text 2";
+      }
+
+      50% {
+        background-color: lightcoral;
+        color: #fff;
+        content: "Text 3";
+      }
+
+      75% {
+        background-color: lightyellow;
+        color: #000;
+        content: "Text 4";
+      }
+
+      100% {
+        background-color: lightblue;
+        color: #000;
+        content: "Text 1";
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="rotating-div">Text 1</div>
+    <div class="rotating-div">Text 2</div>
+    <div class="rotating-div">Text 3</div>
+    <div class="rotating-div">Text 4</div>
+  </div>
+
+</body>
+
+</html>
